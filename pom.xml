@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.leseanbruneau</groupId>
+  <artifactId>spark-java-first-program</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  	<java.version>11</java.version>
+  	<scala.version>2.12</scala.version>
+  	<spark.version>2.4.6</spark.version>
+  </properties>
+  
+  <dependencies>
+	<dependency>
+    	<groupId>org.apache.spark</groupId>
+    	<artifactId>spark-core_${scala.version}</artifactId>
+    	<version>${spark.version}</version>
+	</dependency>
+	<dependency>
+    	<groupId>org.apache.spark</groupId>
+    	<artifactId>spark-sql_${scala.version}</artifactId>
+    	<version>${spark.version}</version>
+	</dependency>	 
+	<dependency>
+    	<groupId>org.apache.hadoop</groupId>
+    	<artifactId>hadoop-hdfs</artifactId>
+    	<version>3.2.1</version>
+	</dependency>	 
+	<dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>15.0</version>
+      </dependency>
+  </dependencies>
+  
+  <build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.8.0</version>
+			<configuration>
+				<release>11</release>  <!--or if Java 8 use <release>8</release> -->
+			</configuration>
+		</plugin>
+	</plugins>
+  </build>
+  
+</project>
