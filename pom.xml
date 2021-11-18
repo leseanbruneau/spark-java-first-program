@@ -8,8 +8,8 @@
   	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   	<java.version>11</java.version>
-  	<scala.version>2.12</scala.version>
-  	<spark.version>2.4.6</spark.version>
+  	<scala.version>2.13</scala.version>
+  	<spark.version>3.2.0</spark.version>
   </properties>
   
   <dependencies>
@@ -26,7 +26,7 @@
 	<dependency>
     	<groupId>org.apache.hadoop</groupId>
     	<artifactId>hadoop-hdfs</artifactId>
-    	<version>3.2.1</version>
+    	<version>3.3.1</version>
 	</dependency>	 
   </dependencies>
   
@@ -35,9 +35,23 @@
 		<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-compiler-plugin</artifactId>
-			<version>3.8.0</version>
+			<version>3.8.1</version>
 			<configuration>
+				<source>11</source>    <!--or if Java 8 use <source>8</source> -->
 				<release>11</release>  <!--or if Java 8 use <release>8</release> -->
+			</configuration>
+		</plugin>
+		<plugin>
+			<artifactId>maven-jar-plugin</artifactId>
+			<version>3.2.0</version>
+			<configuration>
+				<source>11</source>    <!--or if Java 8 use <source>8</source> -->
+				<release>11</release>  <!--or if Java 8 use <release>8</release> -->
+				<archive>
+					<manifest>
+						<mainClass>com.leseanbruneau.SparkAppWithCSV</mainClass>
+					</manifest>
+				</archive>
 			</configuration>
 		</plugin>
 	</plugins>
